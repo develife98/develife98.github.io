@@ -3,214 +3,489 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>develife98 | iPhone App Developer</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:-apple-system,BlinkMacSystemFont,sans-serif;
-    background:#f5f7fa;
-    color:#333;
-    line-height:1.6;
+html {
+    scroll-behavior: smooth;
 }
 
-header{
-    background:linear-gradient(135deg,#4f46e5,#2563eb);
-    color:white;
-    padding:80px 20px;
-    text-align:center;
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #050816;
+    color: #f8fafc;
+    line-height: 1.7;
 }
 
-header h1{
-    font-size:3rem;
-    margin-bottom:10px;
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.35), transparent 30%),
+        radial-gradient(circle at 80% 10%, rgba(168, 85, 247, 0.28), transparent 28%),
+        radial-gradient(circle at 50% 80%, rgba(14, 165, 233, 0.25), transparent 30%);
+    z-index: -2;
 }
 
-header p{
-    font-size:1.2rem;
-    opacity:0.9;
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to bottom, black, transparent);
+    z-index: -1;
 }
 
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:40px 20px;
+a {
+    color: inherit;
 }
 
-section{
-    margin-bottom:60px;
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(18px);
+    background: rgba(5, 8, 22, 0.75);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-.section-title{
-    font-size:2rem;
-    margin-bottom:20px;
-    color:#222;
+.nav-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.about{
-    background:white;
-    padding:30px;
-    border-radius:16px;
-    box-shadow:0 4px 20px rgba(0,0,0,0.05);
+.logo {
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #93c5fd;
 }
 
-.apps{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
+.nav-links {
+    display: flex;
+    gap: 22px;
+    font-size: 0.95rem;
+    color: #cbd5e1;
 }
 
-.card{
-    background:white;
-    padding:25px;
-    border-radius:16px;
-    box-shadow:0 4px 20px rgba(0,0,0,0.05);
-    transition:0.3s;
+.nav-links a {
+    text-decoration: none;
 }
 
-.card:hover{
-    transform:translateY(-5px);
+.hero {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 96px 24px 80px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 48px;
+    align-items: center;
 }
 
-.card h3{
-    margin-bottom:10px;
+.badge {
+    display: inline-block;
+    margin-bottom: 22px;
+    padding: 8px 14px;
+    border: 1px solid rgba(147,197,253,0.35);
+    border-radius: 999px;
+    color: #93c5fd;
+    background: rgba(37,99,235,0.12);
+    font-size: 0.9rem;
 }
 
-.button{
-    display:inline-block;
-    margin-top:15px;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    padding:10px 16px;
-    border-radius:8px;
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
+    margin-bottom: 24px;
 }
 
-.news{
-    background:white;
-    border-radius:16px;
-    padding:30px;
-    box-shadow:0 4px 20px rgba(0,0,0,0.05);
+.gradient-text {
+    background: linear-gradient(90deg, #60a5fa, #a78bfa, #22d3ee);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
-.news ul{
-    list-style:none;
+.hero p {
+    max-width: 640px;
+    color: #cbd5e1;
+    font-size: 1.15rem;
+    margin-bottom: 32px;
 }
 
-.news li{
-    padding:12px 0;
-    border-bottom:1px solid #eee;
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
 }
 
-.blog{
-    background:white;
-    text-align:center;
-    padding:40px;
-    border-radius:16px;
-    box-shadow:0 4px 20px rgba(0,0,0,0.05);
+.btn {
+    display: inline-block;
+    padding: 13px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
 }
 
-footer{
-    text-align:center;
-    padding:40px;
-    color:#888;
+.btn-primary {
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    box-shadow: 0 0 28px rgba(37,99,235,0.45);
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #e2e8f0;
+    background: rgba(255,255,255,0.06);
+}
+
+.visual-card {
+    min-height: 360px;
+    border-radius: 28px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background:
+        linear-gradient(145deg, rgba(37,99,235,0.22), rgba(168,85,247,0.16)),
+        rgba(255,255,255,0.06);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+    position: relative;
+    overflow: hidden;
+}
+
+.visual-card::before {
+    content: "";
+    position: absolute;
+    inset: 28px;
+    border-radius: 22px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background:
+        linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent),
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,0.08) 0,
+            rgba(255,255,255,0.08) 1px,
+            transparent 1px,
+            transparent 18px
+        );
+}
+
+.visual-card::after {
+    content: "</>";
+    position: absolute;
+    right: 36px;
+    bottom: 26px;
+    font-size: 5rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.12);
+}
+
+.orb {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #22d3ee, #2563eb, transparent 70%);
+    top: 54px;
+    left: 54px;
+    filter: blur(2px);
+    opacity: 0.85;
+}
+
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+}
+
+section {
+    margin-bottom: 88px;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    letter-spacing: -0.04em;
+}
+
+.section-subtitle {
+    color: #94a3b8;
+}
+
+.glass {
+    background: rgba(255,255,255,0.065);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.25);
+    backdrop-filter: blur(16px);
+}
+
+.about {
+    padding: 32px;
+    color: #dbeafe;
+}
+
+.apps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    padding: 28px;
+    min-height: 230px;
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(96,165,250,0.45);
+}
+
+.app-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    margin-bottom: 22px;
+    background: linear-gradient(135deg, #2563eb, #7c3aed, #22d3ee);
+    box-shadow: 0 0 24px rgba(96,165,250,0.45);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: #cbd5e1;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 18px;
+    color: #93c5fd;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.news {
+    padding: 28px 32px;
+}
+
+.news-item {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    color: #dbeafe;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-date {
+    color: #60a5fa;
+    font-weight: 700;
+    margin-right: 12px;
+}
+
+.blog-box {
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: center;
+}
+
+.blog-box p {
+    color: #cbd5e1;
+}
+
+footer {
+    padding: 42px 24px;
+    text-align: center;
+    color: #64748b;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+@media (max-width: 800px) {
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 64px;
+    }
+
+    .visual-card {
+        min-height: 240px;
+    }
+
+    .apps {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        gap: 12px;
+        font-size: 0.85rem;
+    }
 }
 </style>
-
 </head>
 
 <body>
 
-<header>
-    <h1>develife98</h1>
-    <p>iPhone App Developer</p>
+<nav class="nav">
+    <div class="nav-inner">
+        <div class="logo">develife98</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#apps">Apps</a>
+            <a href="#news">News</a>
+            <a href="#blog">Blog</a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div>
+        <span class="badge">Independent iPhone App Developer</span>
+        <h1>
+            Building<br>
+            <span class="gradient-text">Useful Apps</span><br>
+            with AI.
+        </h1>
+        <p>
+            develife98は、個人でiPhoneアプリを開発するプロジェクトです。
+            日常のちょっとした不便を解決したり、気軽に楽しめるアプリを作っています。
+        </p>
+        <div class="buttons">
+            <a href="#apps" class="btn btn-primary">アプリを見る</a>
+            <a href="#blog" class="btn btn-secondary">開発ブログへ</a>
+        </div>
+    </div>
+
+    <div class="visual-card">
+        <div class="orb"></div>
+    </div>
 </header>
 
-<div class="container">
+<main class="container">
 
-<section>
-    <h2 class="section-title">About</h2>
+<section id="about">
+    <div class="section-head">
+        <div>
+            <h2 class="section-title">About</h2>
+            <p class="section-subtitle">個人開発とAI活用を軸にしたアプリ制作</p>
+        </div>
+    </div>
 
-    <div class="about">
+    <div class="about glass">
         <p>
-        個人でiPhoneアプリを開発しています。<br>
-        日常のちょっとした不便を解決したり、
-        気軽に楽しめるアプリ作りを目指しています。
+            iPhoneアプリを中心に、シンプルで使いやすいアプリを開発しています。
+            GitHubやAI開発支援ツールを活用しながら、改善・公開・運用まで継続的に取り組んでいます。
         </p>
     </div>
 </section>
 
-<section>
-    <h2 class="section-title">Apps</h2>
+<section id="apps">
+    <div class="section-head">
+        <div>
+            <h2 class="section-title">Apps</h2>
+            <p class="section-subtitle">公開中・開発中のアプリ</p>
+        </div>
+    </div>
 
     <div class="apps">
-
-        <div class="card">
+        <div class="card glass">
+            <div class="app-icon"></div>
             <h3>StressSmash</h3>
             <p>
-                ストレス発散をテーマにした
-                シンプルなタップゲーム。
+                ストレス発散をテーマにした、シンプルなタップゲーム。
+                短時間で気軽に遊べるアプリです。
             </p>
-
-            <a href="#" class="button">
-                詳しく見る
-            </a>
+            <a href="#">詳しく見る →</a>
         </div>
 
-        <div class="card">
+        <div class="card glass">
+            <div class="app-icon"></div>
             <h3>Coming Soon</h3>
             <p>
-                新しいアプリを開発中です。
+                新しいアプリを準備中です。
             </p>
         </div>
 
-        <div class="card">
+        <div class="card glass">
+            <div class="app-icon"></div>
             <h3>Coming Soon</h3>
             <p>
-                新しいアプリを開発中です。
+                新しいアプリを準備中です。
             </p>
         </div>
-
     </div>
 </section>
 
-<section>
-    <h2 class="section-title">News</h2>
+<section id="news">
+    <div class="section-head">
+        <div>
+            <h2 class="section-title">News</h2>
+            <p class="section-subtitle">更新情報</p>
+        </div>
+    </div>
 
-    <div class="news">
-        <ul>
-            <li>2026/06/03 - 公式サイト公開</li>
-            <li>2026/06/03 - StressSmash紹介ページ準備中</li>
-        </ul>
+    <div class="news glass">
+        <div class="news-item">
+            <span class="news-date">2026/06/03</span>
+            公式サイトを公開しました。
+        </div>
+        <div class="news-item">
+            <span class="news-date">2026/06/03</span>
+            StressSmash紹介ページを準備中です。
+        </div>
     </div>
 </section>
 
-<section>
-    <h2 class="section-title">Blog</h2>
+<section id="blog">
+    <div class="section-head">
+        <div>
+            <h2 class="section-title">Blog</h2>
+            <p class="section-subtitle">開発記録・改善メモ</p>
+        </div>
+    </div>
 
-    <div class="blog">
-
-        <p>
-            アプリ開発の記録や学びを発信しています。
-        </p>
-
-        <a href="#" class="button">
-            開発ブログを見る
-        </a>
-
+    <div class="blog-box glass">
+        <div>
+            <h3>Development Notes</h3>
+            <p>
+                アプリ開発の記録、GitHub運用、AI活用、リリースまでの流れをまとめていきます。
+            </p>
+        </div>
+        <a href="#" class="btn btn-primary">開発ブログを見る</a>
     </div>
 </section>
 
-</div>
+</main>
 
 <footer>
-    © 2026 develife98
+    © 2026 develife98. All rights reserved.
 </footer>
 
 </body>
