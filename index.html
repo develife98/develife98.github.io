@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>develife98 | iPhone App Developer</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+    background:#f5f7fa;
+    color:#333;
+    line-height:1.6;
+}
+
+header{
+    background:linear-gradient(135deg,#4f46e5,#2563eb);
+    color:white;
+    padding:80px 20px;
+    text-align:center;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:1.2rem;
+    opacity:0.9;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+section{
+    margin-bottom:60px;
+}
+
+.section-title{
+    font-size:2rem;
+    margin-bottom:20px;
+    color:#222;
+}
+
+.about{
+    background:white;
+    padding:30px;
+    border-radius:16px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.05);
+}
+
+.apps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.05);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.button{
+    display:inline-block;
+    margin-top:15px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:8px;
+}
+
+.news{
+    background:white;
+    border-radius:16px;
+    padding:30px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.05);
+}
+
+.news ul{
+    list-style:none;
+}
+
+.news li{
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+}
+
+.blog{
+    background:white;
+    text-align:center;
+    padding:40px;
+    border-radius:16px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.05);
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#888;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>develife98</h1>
+    <p>iPhone App Developer</p>
+</header>
+
+<div class="container">
+
+<section>
+    <h2 class="section-title">About</h2>
+
+    <div class="about">
+        <p>
+        個人でiPhoneアプリを開発しています。<br>
+        日常のちょっとした不便を解決したり、
+        気軽に楽しめるアプリ作りを目指しています。
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Apps</h2>
+
+    <div class="apps">
+
+        <div class="card">
+            <h3>StressSmash</h3>
+            <p>
+                ストレス発散をテーマにした
+                シンプルなタップゲーム。
+            </p>
+
+            <a href="#" class="button">
+                詳しく見る
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>Coming Soon</h3>
+            <p>
+                新しいアプリを開発中です。
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Coming Soon</h3>
+            <p>
+                新しいアプリを開発中です。
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">News</h2>
+
+    <div class="news">
+        <ul>
+            <li>2026/06/03 - 公式サイト公開</li>
+            <li>2026/06/03 - StressSmash紹介ページ準備中</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Blog</h2>
+
+    <div class="blog">
+
+        <p>
+            アプリ開発の記録や学びを発信しています。
+        </p>
+
+        <a href="#" class="button">
+            開発ブログを見る
+        </a>
+
+    </div>
+</section>
+
+</div>
+
+<footer>
+    © 2026 develife98
+</footer>
+
+</body>
+</html>
