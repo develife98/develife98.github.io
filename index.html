@@ -159,7 +159,7 @@ body::after{
   color:#e2e8f0;
 }
 
-.logo-stage{
+/* .logo-stage{
   min-height:410px;
   border-radius:30px;
   border:1px solid rgba(255,255,255,.14);
@@ -173,9 +173,18 @@ body::after{
   flex-direction:column;
   align-items:center;
   justify-content:center;
+} */
+  .logo-stage{
+  min-height:410px;
+
+  background:transparent;
+
+  border:none;
+
+  box-shadow:none;
 }
 
-.logo-stage::before{
+/* .logo-stage::before{
   content:"";
   position:absolute;
   inset:28px;
@@ -184,14 +193,25 @@ body::after{
   background:
     linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent),
     repeating-linear-gradient(0deg,rgba(255,255,255,.07) 0,rgba(255,255,255,.07) 1px,transparent 1px,transparent 18px);
-}
+} */
 
 .logo-stage img{
   position:relative;
   z-index:1;
-  width:min(260px,70%);
-  border-radius:22px;
-  filter:drop-shadow(0 0 26px rgba(34,211,238,.35));
+
+  width:min(420px,95%);
+  max-width:420px;
+
+  height:auto;
+
+  object-fit:contain;
+
+  filter:
+    drop-shadow(0 0 18px rgba(34,211,238,.35))
+    drop-shadow(0 0 40px rgba(37,99,235,.25));
+
+  background:none;
+  border:none;
 }
 
 .logo-stage p{
@@ -391,7 +411,6 @@ footer{
 
   <div class="logo-stage">
     <img src="assets/images/logor.png" alt="TEAM DEVELIFE98 Logo">
-    <p>APPS • AI • DEVELOPMENT</p>
   </div>
 </header>
 
