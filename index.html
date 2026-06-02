@@ -159,21 +159,6 @@ body::after{
   color:#e2e8f0;
 }
 
-/* .logo-stage{
-  min-height:410px;
-  border-radius:30px;
-  border:1px solid rgba(255,255,255,.14);
-  background:
-    linear-gradient(145deg,rgba(6,182,212,.16),rgba(37,99,235,.18),rgba(124,58,237,.13)),
-    rgba(255,255,255,.06);
-  box-shadow:0 30px 90px rgba(0,0,0,.45);
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-} */
   .logo-stage{
   min-height:410px;
 
@@ -183,17 +168,6 @@ body::after{
 
   box-shadow:none;
 }
-
-/* .logo-stage::before{
-  content:"";
-  position:absolute;
-  inset:28px;
-  border-radius:24px;
-  border:1px solid rgba(255,255,255,.12);
-  background:
-    linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent),
-    repeating-linear-gradient(0deg,rgba(255,255,255,.07) 0,rgba(255,255,255,.07) 1px,transparent 1px,transparent 18px);
-} */
 
 .logo-stage img{
   position:relative;
@@ -339,7 +313,7 @@ footer{
 }
 
 @media(max-width:800px){
-  .hero{
+  /* .hero{
     grid-template-columns:1fr;
     padding-top:64px;
   }
@@ -364,8 +338,53 @@ footer{
 
   .hero h1{
     font-size:clamp(3.7rem,18vw,6rem);
+  } */
+  .hero{
+
+    grid-template-columns:1fr;
+
+    padding:48px 20px 64px;
+
+    gap:28px;
+
+    text-align:center;
+
+  }
+
+  .logo-stage{
+
+    order:1;
+
+    min-height:auto;
+
+  }
+
+  .logo-stage img{
+    width:min(320px,90vw);
+    max-width:320px;
+    margin:auto;
+  }
+
+  .hero > div:not(.logo-stage){
+    order:2;
+  }
+
+  .hero h1{
+    font-size:clamp(3rem,16vw,4.8rem);
+    letter-spacing:-.06em;
+  }
+
+  .hero p{
+    font-size:1rem;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .buttons{
+    justify-content:center;
   }
 }
+  
 </style>
 </head>
 
