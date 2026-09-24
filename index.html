@@ -230,47 +230,98 @@ section{
   color:#dbeafe;
 }
 
-.apps{
+.features{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(2,1fr);
   gap:22px;
+  margin-bottom:40px;
 }
 
-.card{
+.feature{
+  display:flex;
+  gap:22px;
   padding:28px;
-  min-height:230px;
+  color:inherit;
+  text-decoration:none;
   transition:.25s;
 }
 
-.card:hover{
-  transform:translateY(-6px);
+.feature:hover,.app-card:hover{
+  transform:translateY(-4px);
   border-color:rgba(103,232,249,.45);
 }
 
-.app-icon{
-  width:56px;
-  height:56px;
-  border-radius:16px;
-  margin-bottom:22px;
-  background:linear-gradient(135deg,#06b6d4,#2563eb,#7c3aed);
+.feature-icon{
+  width:96px;
+  height:96px;
+  border-radius:22px;
+  flex-shrink:0;
   box-shadow:0 0 26px rgba(34,211,238,.38);
 }
 
-.card h3{
-  margin-bottom:10px;
-  font-size:1.3rem;
+.feature-label{
+  font-size:.8rem;
+  color:#67e8f9;
+  font-weight:800;
+  letter-spacing:.08em;
 }
 
-.card p{
+.feature h3{
+  font-size:1.3rem;
+  margin:4px 0 8px;
+}
+
+.feature p{
   color:#cbd5e1;
 }
 
-.card a{
+.store-link{
   display:inline-block;
-  margin-top:18px;
+  margin-top:12px;
   color:#67e8f9;
-  text-decoration:none;
   font-weight:800;
+}
+
+.genre-title{
+  margin:36px 0 14px;
+  font-size:1.2rem;
+  color:#e0f2fe;
+}
+
+.apps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.app-card{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  padding:16px;
+  border-radius:18px;
+  color:inherit;
+  text-decoration:none;
+  transition:.25s;
+}
+
+.app-icon{
+  width:60px;
+  height:60px;
+  border-radius:14px;
+  flex-shrink:0;
+}
+
+.app-card h4{
+  font-size:.98rem;
+  line-height:1.4;
+  margin-bottom:4px;
+}
+
+.app-card p{
+  color:#94a3b8;
+  font-size:.85rem;
+  line-height:1.5;
 }
 
 .news{
@@ -291,18 +342,6 @@ section{
   color:#67e8f9;
   font-weight:800;
   margin-right:12px;
-}
-
-.blog-box{
-  padding:40px;
-  display:flex;
-  justify-content:space-between;
-  gap:24px;
-  align-items:center;
-}
-
-.blog-box p{
-  color:#cbd5e1;
 }
 
 footer{
@@ -346,12 +385,17 @@ footer{
     gap:28px;
     text-align:center;
   }
-  .apps{
+  .features,.apps{
     grid-template-columns:1fr;
   }
 
-  .card{
-    min-height:auto;
+  .feature{
+    text-align:left;
+  }
+
+  .feature-icon{
+    width:72px;
+    height:72px;
   }
 
   .logo-stage{
@@ -400,7 +444,6 @@ footer{
       <a href="#about">About</a>
       <a href="#apps">Apps</a>
       <a href="#news">News</a>
-      <a href="#blog">Blog</a>
     </div>
   </div>
 </nav>
@@ -424,7 +467,7 @@ footer{
 
     <div class="buttons">
       <a href="#apps" class="btn btn-primary">アプリを見る</a>
-      <a href="#blog" class="btn btn-secondary">開発ブログ</a>
+      <a href="#news" class="btn btn-secondary">最新情報</a>
     </div>
   </div>
 
@@ -449,31 +492,243 @@ footer{
 
 <section id="apps">
   <h2 class="section-title">Apps</h2>
-  <p class="section-subtitle">公開中・開発中のアプリ</p>
-
-  <div class="apps">
-    <div class="card glass">
-      <div class="app-icon"></div>
-      <h3>StressSmash</h3>
-      <p>
-        ストレス発散をテーマにした、シンプルなタップゲーム。
-        短時間で気軽に遊べるアプリです。
-      </p>
-      <a href="#">詳しく見る →</a>
-    </div>
-
-    <div class="card glass">
-      <div class="app-icon"></div>
-      <h3>Coming Soon</h3>
-      <p>新しいアプリを準備中です。</p>
-    </div>
-
-    <div class="card glass">
-      <div class="app-icon"></div>
-      <h3>Coming Soon</h3>
-      <p>新しいアプリを準備中です。</p>
-    </div>
+<!-- APPS:START -->
+  <p class="section-subtitle">App Storeで配信中の30本</p>
+  <div class="features">
+      <a class="feature glass" href="https://apps.apple.com/jp/app/id6465683275" target="_blank" rel="noopener">
+        <img class="feature-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/05/13/38/051338b2-13f6-5e88-e546-de0bb926de26/AppIcon-0-0-1x_U007ephone-0-1-sRGB-85-220.png/512x512bb.jpg" alt="超レバブル のアイコン" loading="lazy">
+        <div>
+          <span class="feature-label">主力アプリ</span>
+          <h3>超レバブル</h3>
+          <p>レバブルを引き寄せろ。1/199で超レバブル発生、継続率75％の確変モードも搭載。</p>
+          <span class="store-link">App Storeで見る →</span>
+        </div>
+      </a>
+      <a class="feature glass" href="https://apps.apple.com/jp/app/id6445875188" target="_blank" rel="noopener">
+        <img class="feature-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/fd/05/a3/fd05a3b9-712c-9e6f-1d5d-68c54c602589/AppIcon-0-0-1x_U007ephone-0-1-sRGB-85-220.png/512x512bb.jpg" alt="ビタ押し７ のアイコン" loading="lazy">
+        <div>
+          <span class="feature-label">主力アプリ</span>
+          <h3>ビタ押し７</h3>
+          <p>超えろ、機械割の地平線。赤7をどれだけ中央に止められるか、全国ランキングで競う。</p>
+          <span class="store-link">App Storeで見る →</span>
+        </div>
+      </a>
   </div>
+  <h3 class="genre-title">パチスロ系</h3>
+  <div class="apps">
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6447466024" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/17/92/e2/1792e2ef-c3d6-ed9b-1906-400472d21a38/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="一体、この台はいつ当たるのか？-パチンコ大当たり運試し- のアイコン" loading="lazy">
+          <div>
+            <h4>一体、この台はいつ当たるのか？-パチンコ大当たり運試し-</h4>
+            <p>パチンコの大当たり確率を自分で設定して、何回転で当たるか運試しできるシミュレーターアプリ</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6448673252" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/dd/06/c8/dd06c81b-520b-4ec7-99dc-187a537c3bd7/AppIcon-0-0-1x_U007epad-0-1-85-220.png/100x100bb.jpg" alt="PEKA-TIME ~とにかく光らせろ~ のアイコン" loading="lazy">
+          <div>
+            <h4>PEKA-TIME ~とにかく光らせろ~</h4>
+            <p>画面の真ん中にあるランプを光らせるスピードを競うアプリです。</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6448845844" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ca/62/5c/ca625cac-6638-4909-66e8-a459430bc0a3/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/100x100bb.jpg" alt="この台はいつフリーズするのか？-スマスロ・パチスロ運試し のアイコン" loading="lazy">
+          <div>
+            <h4>この台はいつフリーズするのか？-スマスロ・パチスロ運試し</h4>
+            <p>1/8192。1/16384。1/65536。そのフリーズ、いつ引けるのか？</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6476452201" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/f4/4d/35/f44d351c-7afa-ec8b-728f-f94fa977fb27/AppIcon-0-0-1x_U007epad-0-85-220.png/100x100bb.jpg" alt="完全勝利君 のアイコン" loading="lazy">
+          <div>
+            <h4>完全勝利君</h4>
+            <p>画面に現れる神の弟子っぽい化け物をタップで倒し続けて完全勝利しよう！</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6449496512" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/00/62/e1/0062e1a0-56ba-15df-6f10-5ff532cace35/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/100x100bb.jpg" alt="中段チェリー暴走 - 特化ゾーンでストック積み上げRUSH のアイコン" loading="lazy">
+          <div>
+            <h4>中段チェリー暴走 - 特化ゾーンでストック積み上げRUSH</h4>
+            <p>中段チェリーが暴走する、一撃爽快スロットゲーム！</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6467124679" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/b4/15/f1/b415f1ae-fc91-5884-5596-8cd4ac8fecff/AppIcon-0-0-1x_U007ephone-0-85-220.png/100x100bb.jpg" alt="とある遊戯台の名言出題 -パチンコ・パチスロセリフクイズ- のアイコン" loading="lazy">
+          <div>
+            <h4>とある遊戯台の名言出題 -パチンコ・パチスロセリフクイズ-</h4>
+            <p>歴代のパチンコ、パチスロで発生する演出のセリフを集めたクイズです</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id1583786887" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/9e/34/50/9e3450c8-9b5f-1f71-c28d-dee1111e915a/AppIcon-1x_U007emarketing-0-7-0-85-220.png/100x100bb.jpg" alt="NoriNavi -パチンコ・パチスロ ノリ打ち収支計算- のアイコン" loading="lazy">
+          <div>
+            <h4>NoriNavi -パチンコ・パチスロ ノリ打ち収支計算-</h4>
+            <p>パチンコ・パチスロの2人用のノリ打ち収支結果を1クリックで表示します。</p>
+          </div>
+        </a>
+  </div>
+  <h3 class="genre-title">ゲーム</h3>
+  <div class="apps">
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6447795260" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8a/ac/fa/8aacfab7-c2ed-1b6d-a3ce-9d43058986b9/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/100x100bb.jpg" alt="Dynamic Visual Acuity のアイコン" loading="lazy">
+          <div>
+            <h4>Dynamic Visual Acuity</h4>
+            <p>目の前を数字が高スピードで通り過ぎるので、その数字を入力ののちにチェックマークで回答してください。</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6446062975" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/b9/50/55/b950554b-00d1-1c8a-3af3-7cb251bd78c0/AppIcon-1x_U007emarketing-0-7-0-85-220.png/100x100bb.jpg" alt="Touch 16 のアイコン" loading="lazy">
+          <div>
+            <h4>Touch 16</h4>
+            <p>ゲーム開始と同時に毎回ランダムに現れる１〜16までの数字を順番にタップしましょう。いかに早く・且つ正確にタップ完了出来る…</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id1643531524" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/e2/33/58/e23358dd-a35e-95a0-dd60-26274c0dd71d/AppIcon-1x_U007emarketing-0-7-0-85-220.png/100x100bb.jpg" alt="Touch 9 のアイコン" loading="lazy">
+          <div>
+            <h4>Touch 9</h4>
+            <p>ゲーム開始と同時に毎回ランダムに現れる１〜９までの数字を順番にタップしましょう。いかに早くタップ完了出来るか、という時間…</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id1640071132" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/4e/07/e3/4e07e323-3120-c8a4-50c3-ce41f6fd5fe9/AppIcon-1x_U007emarketing-0-7-0-85-220.png/100x100bb.jpg" alt="色当てゲーム のアイコン" loading="lazy">
+          <div>
+            <h4>色当てゲーム</h4>
+            <p>１００種類以上の色が表示されるので、４択から正しい色の名前を選択してください。</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6730122320" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e7/d2/19/e7d21919-458f-9a39-e30b-3cc516b0f3d3/AppIcon-0-0-1x_U007ephone-0-85-220.png/100x100bb.jpg" alt="電流イライラボール のアイコン" loading="lazy">
+          <div>
+            <h4>電流イライラボール</h4>
+            <p>ボールでボールを押しましょう。</p>
+          </div>
+        </a>
+  </div>
+  <h3 class="genre-title">脳トレ</h3>
+  <div class="apps">
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6449622992" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/b0/60/69/b0606996-ce9f-1c9a-db85-f846dddde86f/AppIcon-0-0-1x_U007ephone-0-P3-85-220.png/100x100bb.jpg" alt="理牌無用-麻雀力アップ！麻雀待ち牌当て脳トレゲーム- のアイコン" loading="lazy">
+          <div>
+            <h4>理牌無用-麻雀力アップ！麻雀待ち牌当て脳トレゲーム-</h4>
+            <p>1.新感覚！麻雀で脳トレ！</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id1631839182" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/85/80/2d/85802dbb-57e6-bfed-9589-cf24f2d19692/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="Make10s：頭が冴えるテンパズル のアイコン" loading="lazy">
+          <div>
+            <h4>Make10s：頭が冴えるテンパズル</h4>
+            <p>シンプルなのに、やり込むほど奥が深い数字パズル。</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6503454516" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/23/28/51/2328511c-364a-3730-02a9-848dac58b878/AppIcon-0-0-1x_U007ephone-0-85-220.png/100x100bb.jpg" alt="激ムズ1人神経衰弱 のアイコン" loading="lazy">
+          <div>
+            <h4>激ムズ1人神経衰弱</h4>
+            <p>1人用の神経衰弱です。</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6560121832" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/26/ec/51/26ec51b3-72b2-995a-81e5-41be01d765c9/AppIcon-0-0-1x_U007ephone-0-sRGB-85-220.png/100x100bb.jpg" alt="全日本統一暗算バトル のアイコン" loading="lazy">
+          <div>
+            <h4>全日本統一暗算バトル</h4>
+            <p>足す引く掛ける割る、四則演算をどれだけ正確に・素早く解くことが出来るかを競うアプリです。</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6503212333" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5c/21/24/5c2124ce-d02c-2779-b06f-f27a6b3e9fd5/AppIcon-0-0-1x_U007epad-0-85-220.png/100x100bb.jpg" alt="FlashNine のアイコン" loading="lazy">
+          <div>
+            <h4>FlashNine</h4>
+            <p>9つのパネルが１から順にフラッシュするので、フラッシュした順にパネルを押していってください。</p>
+          </div>
+        </a>
+  </div>
+  <h3 class="genre-title">暇つぶし</h3>
+  <div class="apps">
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id1661524718" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/48/3d/57/483d57ca-4f3f-fa2d-7fb0-18e6705b8701/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/100x100bb.jpg" alt="ハエ叩き のアイコン" loading="lazy">
+          <div>
+            <h4>ハエ叩き</h4>
+            <p>目の前を飛び回るハエを、指先ひとつでパチンと退治！</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6448691921" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/f1/66/7f/f1667f92-fd2c-51e4-c66a-36f3792768d5/AppIcon-1x_U007emarketing-0-7-0-85-220.png/100x100bb.jpg" alt="ストレスフリィィイーー!! のアイコン" loading="lazy">
+          <div>
+            <h4>ストレスフリィィイーー!!</h4>
+            <p>画面に出てくるグーを、長押し&amp;スワイプでひたすら壊すだけのアプリです。</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6627344922" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/b0/35/6b/b0356ba9-7a54-acea-5d81-c09828f42f5e/AppIcon-0-0-1x_U007ephone-0-85-220.png/100x100bb.jpg" alt="Avoid -敵を避け続けろ！ のアイコン" loading="lazy">
+          <div>
+            <h4>Avoid -敵を避け続けろ！</h4>
+            <p>無限に発生する敵を避け続けろ！</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6738322064" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/76/cd/d9/76cdd982-14f3-d8ab-2a8a-ecafa559dbd6/AppIcon-0-0-1x_U007emarketing-0-4-P3-85-220.png/100x100bb.jpg" alt="速攻満貫成就 のアイコン" loading="lazy">
+          <div>
+            <h4>速攻満貫成就</h4>
+            <p>願いを込めて、あらゆる苦悩を最速で振り払おう！</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id1642031482" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/f3/a1/ba/f3a1ba5d-8233-e47d-de7b-a603a9d8ea4c/AppIcon-1x_U007emarketing-0-7-0-85-220.png/100x100bb.jpg" alt="連打de横跳び のアイコン" loading="lazy">
+          <div>
+            <h4>連打de横跳び</h4>
+            <p>10秒間、左右交互にボタンを連打し続けよう！</p>
+          </div>
+        </a>
+  </div>
+  <h3 class="genre-title">子ども向け</h3>
+  <div class="apps">
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id1557109244" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/18/c5/04/18c504ca-ba66-f306-6b24-212841b72e8d/AppIcon-1x_U007emarketing-0-7-0-85-220.png/100x100bb.jpg" alt="じゃんけんPON！ーポン吉とあとだしジャンケンバトル！ のアイコン" loading="lazy">
+          <div>
+            <h4>じゃんけんPON！ーポン吉とあとだしジャンケンバトル！</h4>
+            <p>ポン吉の指示通りに、あとだしじゃんけんをするゲームです</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6455304100" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/ce/47/d6/ce47d64f-5c7a-a39f-2dba-4b7e2389a08f/AppIcon-1x_U007ephone-P3-85-220.png/100x100bb.jpg" alt="はたあげ！うそくん・ほんとくん のアイコン" loading="lazy">
+          <div>
+            <h4>はたあげ！うそくん・ほんとくん</h4>
+            <p>ほんとくんとうそくんが登場します。ほんとくんの場合は旗を上げている通りに、うそくんの場合は上げている旗と逆に、赤と白の旗…</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6443506517" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/d5/12/1b/d5121b6c-ba10-6d6b-8a6c-88c5f07ef30e/AppIcon-1x_U007emarketing-0-5-0-P3-85-220.png/100x100bb.jpg" alt="ばいきんをやっつけろ！ のアイコン" loading="lazy">
+          <div>
+            <h4>ばいきんをやっつけろ！</h4>
+            <p>お医者さん先生を助けるために、ひたすらでてくるばいきんをタップしてやっつけよう！</p>
+          </div>
+        </a>
+  </div>
+  <h3 class="genre-title">ユーティリティ</h3>
+  <div class="apps">
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id1579337100" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple112/v4/ee/1b/9d/ee1b9dc4-3c26-57c4-a507-0891a246b7c0/AppIcon-1x_U007emarketing-0-7-0-85-220.png/100x100bb.jpg" alt="分割地図〜Dual Map〜 のアイコン" loading="lazy">
+          <div>
+            <h4>分割地図〜Dual Map〜</h4>
+            <p>地図を使っていて、現在地と目的地を行ったりきたり、</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6448674679" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/65/75/4a/65754a39-779f-2457-821b-1769c29caf17/AppIcon-1x_U007epad-85-220.png/100x100bb.jpg" alt="RGB Master - 色の魔術師 のアイコン" loading="lazy">
+          <div>
+            <h4>RGB Master - 色の魔術師</h4>
+            <p>あなたは色の構成要素を気にしたことはあるでしょうか？</p>
+          </div>
+        </a>
+        <a class="app-card glass" href="https://apps.apple.com/jp/app/id6465346524" target="_blank" rel="noopener">
+          <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/b2/81/9c/b2819c2c-7a33-7667-a4df-f7a73d2aa8a1/AppIcon-1x_U007ephone-85-220.png/100x100bb.jpg" alt="Mr.CAGR のアイコン" loading="lazy">
+          <div>
+            <h4>Mr.CAGR</h4>
+            <p>開始・終了期間と値を入力するだけで簡単にCAGR計算を行うことができます。</p>
+          </div>
+        </a>
+  </div>
+<!-- APPS:END -->
 </section>
 
 <section id="news">
@@ -482,30 +737,12 @@ footer{
 
   <div class="news glass">
     <div class="news-item">
-      <span class="news-date">2026/06/03</span>
+      <span class="news-date">2026/09/24</span>
       公式サイトを公開しました。
     </div>
-    <div class="news-item">
-      <span class="news-date">2026/06/03</span>
-      StressSmash紹介ページを準備中です。
-    </div>
   </div>
 </section>
 
-<section id="blog">
-  <h2 class="section-title">Blog</h2>
-  <p class="section-subtitle">開発記録・改善メモ</p>
-
-  <div class="blog-box glass">
-    <div>
-      <h3>Development Notes</h3>
-      <p>
-        アプリ開発の記録、GitHub運用、AI活用、リリースまでの流れをまとめていきます。
-      </p>
-    </div>
-    <a href="#" class="btn btn-primary">開発ブログを見る</a>
-  </div>
-</section>
 
 </main>
 
